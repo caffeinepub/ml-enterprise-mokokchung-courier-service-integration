@@ -1,0 +1,41 @@
+{
+  "kind": "build_request",
+  "title": "Add Submit Button to Booking Form",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-3",
+      "text": "Add a submit button to the BookingSection component that triggers form submission when clicked",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-submit-request"
+        ],
+        "quotes": [
+          "add submit bottom"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A visible submit button is present in the BookingSection form",
+        "The button triggers the existing handleSubmit function when clicked",
+        "The button is appropriately styled and labeled (e.g., 'Submit Booking' or 'Book Now')",
+        "The button is disabled during form submission to prevent duplicate submissions"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify the existing booking form structure or fields",
+    "Use the existing handleSubmit logic already present in BookingSection.tsx",
+    "Maintain consistency with the current UI design patterns"
+  ],
+  "nonGoals": [
+    "Adding new form fields",
+    "Changing validation logic",
+    "Modifying backend booking endpoints",
+    "Redesigning the entire form layout"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

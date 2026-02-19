@@ -1,0 +1,24 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add Submit Button to Booking Form",
+  "requirements": [
+    {
+      "id": "REQ-3",
+      "summary": "Add a submit button to the BookingSection component that triggers form submission when clicked",
+      "acceptanceCriteria": [
+        "A visible submit button is present in the BookingSection form",
+        "The button triggers the existing handleSubmit function when clicked",
+        "The button is appropriately styled and labeled (e.g., 'Submit Booking' or 'Book Now')",
+        "The button is disabled during form submission to prevent duplicate submissions"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Add a submit button to the booking form that triggers the existing handleSubmit function. The button should be labeled 'Book Now', styled consistently with the existing UI design patterns (using Tailwind CSS classes similar to other buttons in the application), and disabled during form submission to prevent duplicate submissions. The button should be placed at the end of the form, after all input fields. Use the createBooking mutation's isPending state to control the disabled state and display appropriate loading text (e.g., 'Processing...' when submitting)."
+        }
+      ]
+    }
+  ]
+}

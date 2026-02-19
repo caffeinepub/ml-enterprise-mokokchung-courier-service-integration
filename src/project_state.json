@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "New project",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-remove-the-gallerysection-component-from-the-homepage-component-to-eliminate-the-photo-gallery-from-the-landing-page",
+      "title": "Remove the GallerySection component from the HomePage component to eliminate the photo gallery from the landing page",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-bookingsection-component-from-the-homepage-component-to-eliminate-the-shipment-booking-form-from-the-landing-page",
+      "title": "Remove the BookingSection component from the HomePage component to eliminate the shipment booking form from the landing page",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-2",
+      "summary": "Add comprehensive booking form with sender, consignee, package details, service/shipping details, payment, and submit button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add a submit button to the BookingSection component that triggers form submission when clicked",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Remove gallery picture section",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

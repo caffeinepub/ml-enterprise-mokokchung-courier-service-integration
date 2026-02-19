@@ -1,2 +1,3 @@
-# ml-enterprise-mokokchung-courier-service-integration
-Exported from Caffeine project: ML Enterprise Mokokchung Courier Service Integration
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`
