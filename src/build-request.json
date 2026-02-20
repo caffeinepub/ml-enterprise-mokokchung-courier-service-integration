@@ -1,41 +1,166 @@
 {
   "kind": "build_request",
-  "title": "Add Submit Button to Booking Form",
+  "title": "Update booking form to match uploaded design format",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-3",
-      "text": "Add a submit button to the BookingSection component that triggers form submission when clicked",
+      "id": "REQ-1",
+      "text": "Restructure the BookingSection form layout to match the uploaded design with a two-column grid for form fields, placing Customer/Consignor Name alongside Mobile Number, No. of Packages alongside Approximate Weight(Kg), Origin Pincode alongside Destination Pincode, Preferred Pickup Date alongside Email, and Address 1 spanning full width at the bottom",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-user-submit-request"
+          "msg-latest"
         ],
         "quotes": [
-          "add submit bottom"
+          "add this formate for booking form"
         ]
       },
       "acceptanceCriteria": [
-        "A visible submit button is present in the BookingSection form",
-        "The button triggers the existing handleSubmit function when clicked",
-        "The button is appropriately styled and labeled (e.g., 'Submit Booking' or 'Book Now')",
-        "The button is disabled during form submission to prevent duplicate submissions"
+        "Form fields are arranged in a two-column grid matching the uploaded design",
+        "Address 1 field spans the full width below the grid",
+        "Field labels match the uploaded design exactly"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add a Mode selector toggle at the top of the booking form with truck/ground and airplane/air shipping icons as radio button options, with the truck option selected by default",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Mode selector appears at the top of the form with truck and airplane icons",
+        "Only one mode can be selected at a time",
+        "Truck/ground mode is selected by default",
+        "Selected mode is highlighted with a green indicator"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add Address 2 and Address 3 optional fields below Address 1, displayed in a two-column layout matching the design",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Address 2 and Address 3 fields appear below Address 1",
+        "Both fields are optional and arranged in two columns",
+        "Field styling matches other form inputs"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add a Verify button next to the Mobile Number field for mobile number verification functionality",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Verify button appears inline with Mobile Number field",
+        "Button has light gray background matching the design",
+        "Button is visually aligned with the input field"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Update form field labels to match the uploaded design exactly: use 'Customer/Consignor Name', 'Mobile Number', 'No. of Packages', 'Approximate Weight(Kg)', 'Origin Pincode', 'Destination Pincode', 'Preferred Pickup Date', 'Email', 'Address 1', 'Address 2', and 'Address 3'",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All field labels match the exact text from the uploaded design",
+        "Required field asterisks are positioned before the label text",
+        "Label styling is consistent across all fields"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Replace the existing Select Shipping Option radio buttons with the Mode toggle selector at the top, and remove the separate Services selection from the form since shipping mode is now controlled by the toggle",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Shipping option radio buttons are removed from the form",
+        "Mode toggle is the primary shipping method selector",
+        "Form submission correctly captures the selected mode"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add decorative package box illustrations in the bottom-right corner of the form matching the visual style shown in the uploaded design",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Package box illustrations appear in the bottom-right corner",
+        "Illustrations do not overlap with form content",
+        "Visual style matches the uploaded design"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Update the Preferred Pickup Date field to use a date-time picker input with a calendar icon button, displaying the format '19-02-2026 13:34 PM' as shown in the uploaded design",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Date field includes a calendar icon button on the right",
+        "Date format displays as DD-MM-YYYY HH:MM AM/PM",
+        "Clicking the calendar icon opens a date-time picker"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Add a green 'General' heading at the top of the booking form section to match the uploaded design",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Green 'General' heading appears above the mode selector",
+        "Heading uses green color matching the design theme",
+        "Heading is center-aligned"
       ]
     }
   ],
   "constraints": [
-    "Do not modify the existing booking form structure or fields",
-    "Use the existing handleSubmit logic already present in BookingSection.tsx",
-    "Maintain consistency with the current UI design patterns"
+    "Maintain the existing backend Booking data structure",
+    "Preserve all form validation logic including 6-digit pincode validation",
+    "Keep the existing booking confirmation dialog integration",
+    "Do not modify the BookingConfirmationDialog or ShippingLabel components"
   ],
   "nonGoals": [
-    "Adding new form fields",
-    "Changing validation logic",
-    "Modifying backend booking endpoints",
-    "Redesigning the entire form layout"
+    "Implementing actual mobile number verification functionality",
+    "Adding backend changes for mode or additional address fields",
+    "Modifying the admin dashboard booking display",
+    "Changing the existing courier partners or services sections"
   ],
   "imageRequirements": {
-    "required": [],
+    "required": [
+      "Truck icon for ground shipping mode selector in green (truck-icon.dim_32x32.png)",
+      "Airplane icon for air shipping mode selector in green (airplane-icon.dim_32x32.png)",
+      "Decorative package box illustrations for form corner in warm colors (package-boxes.dim_400x200.png)"
+    ],
     "edits": []
   }
 }

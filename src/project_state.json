@@ -1,45 +1,94 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
+  "projectStateVersion": 3,
   "summary": "New project",
   "architectural_notes": [],
   "known_issues": [],
-  "isFixRequest": true,
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Truck icon for ground shipping mode selector in green (truck-icon.dim_32x32.png)\n- Airplane icon for air shipping mode selector in green (airplane-icon.dim_32x32.png)\n- Decorative package box illustrations for form corner in warm colors (package-boxes.dim_400x200.png)",
   "existing_features": [
     {
-      "id": "feature-remove-the-gallerysection-component-from-the-homepage-component-to-eliminate-the-photo-gallery-from-the-landing-page",
-      "title": "Remove the GallerySection component from the HomePage component to eliminate the photo gallery from the landing page",
+      "id": "feature-restructure-the-bookingsection-form-layout-to-match-the-uploaded-design-with-a-two-column-grid-for-form-fields-placing-customer-consignor-name-alongside-mobile-number-no-of-packages-alongside-approximate-weight-kg-origin-pincode-alongside-destination-pincode-preferred-pickup-date-alongside-email-and-address-1-spanning-full-width-at-the-bottom",
+      "title": "Restructure the BookingSection form layout to match the uploaded design with a two-column grid for form fields, placing Customer/Consignor Name alongside Mobile Number, No. of Packages alongside Approximate Weight(Kg), Origin Pincode alongside Destination Pincode, Preferred Pickup Date alongside Email, and Address 1 spanning full width at the bottom",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-remove-the-bookingsection-component-from-the-homepage-component-to-eliminate-the-shipment-booking-form-from-the-landing-page",
-      "title": "Remove the BookingSection component from the HomePage component to eliminate the shipment booking form from the landing page",
+      "id": "feature-add-a-mode-selector-toggle-at-the-top-of-the-booking-form-with-truck-ground-and-airplane-air-shipping-icons-as-radio-button-options-with-the-truck-option-selected-by-default",
+      "title": "Add a Mode selector toggle at the top of the booking form with truck/ground and airplane/air shipping icons as radio button options, with the truck option selected by default",
       "reqIds": [
         "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-address-2-and-address-3-optional-fields-below-address-1-displayed-in-a-two-column-layout-matching-the-design",
+      "title": "Add Address 2 and Address 3 optional fields below Address 1, displayed in a two-column layout matching the design",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-verify-button-next-to-the-mobile-number-field-for-mobile-number-verification-functionality",
+      "title": "Add a Verify button next to the Mobile Number field for mobile number verification functionality",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-form-field-labels-to-match-the-uploaded-design-exactly-use-customer-consignor-name-mobile-number-no-of-packages-approximate-weight-kg-origin-pincode-destination-pincode-preferred-pickup-date-email-address-1-address-2-and-address-3",
+      "title": "Update form field labels to match the uploaded design exactly: use 'Customer/Consignor Name', 'Mobile Number', 'No. of Packages', 'Approximate Weight(Kg)', 'Origin Pincode', 'Destination Pincode', 'Preferred Pickup Date', 'Email', 'Address 1', 'Address 2', and 'Address 3'",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-existing-select-shipping-option-radio-buttons-with-the-mode-toggle-selector-at-the-top-and-remove-the-separate-services-selection-from-the-form-since-shipping-mode-is-now-controlled-by-the-toggle",
+      "title": "Replace the existing Select Shipping Option radio buttons with the Mode toggle selector at the top, and remove the separate Services selection from the form since shipping mode is now controlled by the toggle",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-decorative-package-box-illustrations-in-the-bottom-right-corner-of-the-form-matching-the-visual-style-shown-in-the-uploaded-design",
+      "title": "Add decorative package box illustrations in the bottom-right corner of the form matching the visual style shown in the uploaded design",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-preferred-pickup-date-field-to-use-a-date-time-picker-input-with-a-calendar-icon-button-displaying-the-format-19-02-2026-13-34-pm-as-shown-in-the-uploaded-design",
+      "title": "Update the Preferred Pickup Date field to use a date-time picker input with a calendar icon button, displaying the format '19-02-2026 13:34 PM' as shown in the uploaded design",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-green-general-heading-at-the-top-of-the-booking-form-section-to-match-the-uploaded-design",
+      "title": "Add a green 'General' heading at the top of the booking form section to match the uploaded design",
+      "reqIds": [
+        "REQ-9"
       ],
       "version": 1
     }
   ],
   "new_feature_requests": [
     {
-      "id": "AR-2",
-      "summary": "Add comprehensive booking form with sender, consignee, package details, service/shipping details, payment, and submit button",
+      "id": "AR-1",
+      "summary": "Add specific format to booking form",
       "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-3",
-      "summary": "Add a submit button to the BookingSection component that triggers form submission when clicked",
-      "reqIds": [
-        "REQ-3"
-      ],
       "status": "pending"
     }
   ],
-  "projectName": "Remove gallery picture section",
+  "projectName": "Update booking form to match uploaded design format",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

@@ -1,22 +1,150 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add Submit Button to Booking Form",
+  "title": "Update booking form to match uploaded design format",
   "requirements": [
     {
-      "id": "REQ-3",
-      "summary": "Add a submit button to the BookingSection component that triggers form submission when clicked",
+      "id": "REQ-1",
+      "summary": "Restructure the BookingSection form layout to match the uploaded design with a two-column grid for form fields",
       "acceptanceCriteria": [
-        "A visible submit button is present in the BookingSection form",
-        "The button triggers the existing handleSubmit function when clicked",
-        "The button is appropriately styled and labeled (e.g., 'Submit Booking' or 'Book Now')",
-        "The button is disabled during form submission to prevent duplicate submissions"
+        "Form fields are arranged in a two-column grid matching the uploaded design",
+        "Address 1 field spans the full width below the grid",
+        "Field labels match the uploaded design exactly"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/BookingSection.tsx",
           "operation": "modify",
-          "description": "Add a submit button to the booking form that triggers the existing handleSubmit function. The button should be labeled 'Book Now', styled consistently with the existing UI design patterns (using Tailwind CSS classes similar to other buttons in the application), and disabled during form submission to prevent duplicate submissions. The button should be placed at the end of the form, after all input fields. Use the createBooking mutation's isPending state to control the disabled state and display appropriate loading text (e.g., 'Processing...' when submitting)."
+          "description": "Restructure the form layout to use a two-column grid system with pairs: Customer/Consignor Name + Mobile Number, No. of Packages + Approximate Weight(Kg), Origin Pincode + Destination Pincode, Preferred Pickup Date + Email. Keep Address 1 as full-width below the grid. Update field labels to match the design specifications. Remove the existing shipping option radio buttons section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add a Mode selector toggle at the top of the booking form with truck/ground and airplane/air shipping icons as radio button options",
+      "acceptanceCriteria": [
+        "Mode selector appears at the top of the form with truck and airplane icons",
+        "Only one mode can be selected at a time",
+        "Truck/ground mode is selected by default",
+        "Selected mode is highlighted with a green indicator"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Add a Mode selector toggle component at the top of the form (below the 'General' heading) with truck icon (referencing frontend/public/assets/generated/truck-icon.dim_32x32.png) for ground shipping and airplane icon (referencing frontend/public/assets/generated/airplane-icon.dim_32x32.png) for air shipping. Implement as radio button group with green selection indicator. Set truck/ground as default selected mode. Add state management for the selected mode and integrate it with form submission."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add Address 2 and Address 3 optional fields below Address 1 in a two-column layout",
+      "acceptanceCriteria": [
+        "Address 2 and Address 3 fields appear below Address 1",
+        "Both fields are optional and arranged in two columns",
+        "Field styling matches other form inputs"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Add Address 2 and Address 3 optional text input fields below Address 1 in a two-column grid layout. Style them consistently with other form inputs using the same input classes and spacing. Update form state and validation to handle these optional fields."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add a Verify button next to the Mobile Number field for mobile number verification functionality",
+      "acceptanceCriteria": [
+        "Verify button appears inline with Mobile Number field",
+        "Button has light gray background matching the design",
+        "Button is visually aligned with the input field"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Add a 'Verify' button inline with the Mobile Number input field using a flex container. Style the button with light gray background (bg-gray-200) to match the uploaded design. Position it on the right side of the input field with proper alignment and spacing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Update form field labels to match the uploaded design exactly with proper asterisk positioning",
+      "acceptanceCriteria": [
+        "All field labels match the exact text from the uploaded design",
+        "Required field asterisks are positioned before the label text",
+        "Label styling is consistent across all fields"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Update all form field labels to match the exact text from the uploaded design: 'Customer/Consignor Name', 'Mobile Number', 'No. of Packages', 'Approximate Weight(Kg)', 'Origin Pincode', 'Destination Pincode', 'Preferred Pickup Date', 'Email', 'Address 1', 'Address 2', 'Address 3'. Position required field asterisks before the label text for consistency. Ensure label styling is uniform across all fields."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Replace the existing Select Shipping Option radio buttons with the Mode toggle selector",
+      "acceptanceCriteria": [
+        "Shipping option radio buttons are removed from the form",
+        "Mode toggle is the primary shipping method selector",
+        "Form submission correctly captures the selected mode"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Remove the existing 'Select Shipping Option' radio buttons section (standard/express/overnight) from the form. Update form submission logic to use the Mode toggle selection instead. Map the mode selection to the appropriate backend ShippingOption enum value."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add decorative package box illustrations in the bottom-right corner of the form",
+      "acceptanceCriteria": [
+        "Package box illustrations appear in the bottom-right corner",
+        "Illustrations do not overlap with form content",
+        "Visual style matches the uploaded design"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Add decorative package box illustrations in the bottom-right corner of the form using the generated image frontend/public/assets/generated/package-boxes.dim_400x200.png. Position the image using absolute positioning within the form container to ensure it doesn't overlap with form inputs. Apply appropriate styling to match the uploaded design aesthetic."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Update the Preferred Pickup Date field to use a date-time picker with calendar icon and specific format",
+      "acceptanceCriteria": [
+        "Date field includes a calendar icon button on the right",
+        "Date format displays as DD-MM-YYYY HH:MM AM/PM",
+        "Clicking the calendar icon opens a date-time picker"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Update the Preferred Pickup Date field to display format 'DD-MM-YYYY HH:MM AM/PM' (e.g., '19-02-2026 13:34 PM'). Add a calendar icon button on the right side of the input field. Implement date-time picker functionality that opens when the calendar icon is clicked. Update form state and validation to handle the new date-time format."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Add a green 'General' heading at the top of the booking form section",
+      "acceptanceCriteria": [
+        "Green 'General' heading appears above the mode selector",
+        "Heading uses green color matching the design theme",
+        "Heading is center-aligned"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Add a center-aligned 'General' heading at the top of the booking form section, above the Mode selector toggle. Style the heading with green color (text-green-600 or similar to match the design theme). Use appropriate font size and spacing to match the uploaded design."
         }
       ]
     }
